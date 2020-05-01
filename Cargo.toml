@@ -1,0 +1,21 @@
+[package]
+name = "ndk-rust-demo-piet"
+version = "0.1.0"
+authors = ["Marco Munizaga <marco@marcopolo.io>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+crate-type = ["dylib"]
+
+[dependencies]
+log = "0.4.8"
+
+[target.'cfg(target_os = "android")'.dependencies]
+jni-sys = "0.3.0"
+jni-glue = "0.0.9"
+# android-ndk = {path = "../android-ndk-rs/android-ndk"}
+android_logger = "0.8"
+jni-android-sys = {version = "0.0.9",  features = ["api-level-28", "all"]}
+
